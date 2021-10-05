@@ -20,11 +20,13 @@ Jenkins homework
 1. Create VMs with Jenkins in GCP
 2. Installed necessary plugins, plus GCE plugin
 3. Created a multibranch pipeline, added SCM with Jenkinsfile
-    ![img1](https://github.com/alex-kay/jenkins-homework/blob/main/img/Screenshot%202021-09-30%20213549.png)
+    ![img1](https://github.com/alex-kay/jenkins-hw2/blob/cc4aba8c6502b8ff560f8e2921453fe21c16a0bc/img/Screenshot%202021-09-30%20213549.png)
 4. Configured GCE plugin to create worker instances based on an image with java installed (otherwise Jenkins didn't want to connect with the nodes)
-    ![img2](https://github.com/alex-kay/jenkins-homework/blob/main/img/Screenshot%202021-09-30%20213739.png)
+    ![img2](https://github.com/alex-kay/jenkins-hw2/blob/cc4aba8c6502b8ff560f8e2921453fe21c16a0bc/img/Screenshot%202021-09-30%20213739.png)
 5. Added a when condition so "build" stage is skipped when commit message equals to "SKIP_CI"
-   ![img3](https://github.com/alex-kay/jenkins-homework/blob/main/img/Screenshot%202021-09-30%20223739.png)
+   ![img3](https://github.com/alex-kay/jenkins-hw2/blob/cc4aba8c6502b8ff560f8e2921453fe21c16a0bc/img/Screenshot%202021-09-30%20223739.png)
 6. As a sample project to build, I use a HTML5 boilerplate, just npm project
 7. Last stage - archiving artifacts built by npm in zip file
 8. Added github webhook
+9. Finally! jenkins builds website and adds zipped /dist/ folder to artifacts
+    ![img4](https://github.com/alex-kay/jenkins-hw2/blob/master/img/Screenshot%202021-10-06%20015846.png)
