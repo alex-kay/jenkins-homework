@@ -1,3 +1,5 @@
+@Library('jenkins-shared-lib')_
+
 pipeline {
     agent any
     environment {
@@ -5,6 +7,9 @@ pipeline {
     }
 
     stages {
+        stage('Test'){
+            call 'alex'
+        }
         stage('Install modules') {
         steps {
             sh 'npm install'
