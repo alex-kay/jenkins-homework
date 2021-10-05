@@ -29,11 +29,8 @@ pipeline {
             }
         }
         steps {
-            echo 'Building!'
-            steps {
             sh 'npm run build'
             }
-        }
         }
 
         stage('Ping websites') {
