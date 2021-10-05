@@ -31,6 +31,7 @@ pipeline {
         }
         steps {
             sh 'npm run build'
+            sh 'git tag build-${BUILD_NUMBER}'
             }
         }
 
