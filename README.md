@@ -4,16 +4,17 @@ Jenkins homework
 
 ## Tasks
 
-* connect static slave node
-* create declarative job
-* add parameter environment
-* trigger on push and pr
-* skip build if commit message is "SKIP_CI"
-* create zip file with suffix $BRANCH_NAME and store it like artifact and build_number
-* create shared library to send slack notification with build status
-* in parallel ping 3 different servers and if ping failed - stop the job
-* move all logic to shared library
-* ADDITIONAL: after building app, Jenkins should tag the current commit with build number
+* connect static slave node **(TO DO)**
+* create declarative job *(done)*
+* add parameter environment *(done)*
+* trigger on push and pr *(done with wbhook)*
+* skip build if commit message is "SKIP_CI" *(done)*
+* create zip file with suffix $BRANCH_NAME *(done)*
+* and store it like artifact and build_number *(done)*
+* create shared library to send slack notification with build status **(TO DO)**
+* in parallel ping 3 different servers and if ping failed - stop the job *(done)*
+* move all logic to shared library **(TO DO)**
+* ADDITIONAL: after building app, Jenkins should tag the current commit with build number *(done)*
 
 ## my actions
 
@@ -25,7 +26,7 @@ Jenkins homework
     ![img2](./img/Screenshot%202021-09-30%20213739.png)
 5. Added a when condition so "build" stage is skipped when commit message equals to "SKIP_CI"
    ![img3](./img/Screenshot%202021-09-30%20223739.png)
-6. As a sample project to build, I use a HTML5 boilerplate, just npm project
+6. As a sample project to build, I used a HTML5 boilerplate, just npm project (i utilized my previous code - a project from external EPAM training course)
 7. Last stage - archiving artifacts built by npm in zip file
 8. Added github webhook
 9. Finally! jenkins builds website and adds zipped /dist/ folder to artifacts
