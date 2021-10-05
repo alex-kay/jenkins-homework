@@ -13,6 +13,7 @@ Jenkins homework
 * create shared library to send slack notification with build status
 * in parallel ping 3 different servers and if ping failed - stop the job
 * move all logic to shared library
+* ADDITIONAL: after building app, Jenkins should tag the current commit with build number
 
 ## my actions
 
