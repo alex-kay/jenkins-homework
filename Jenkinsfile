@@ -52,8 +52,8 @@ pipeline {
     }
     post {
         always {
-            sh 'zip artifact-${GIT_BRANCH}-${BUILD_NUMBER}.zip ./dist/ '
-            //  archiveArtifacts artifacts: '**/dist/', followSymlinks: false, allowEmptyArchive: true
+            sh 'zip branch-${GIT_BRANCH}-build-${BUILD_NUMBER}.zip ./dist/* '
+            archiveArtifacts artifacts: '*.zip', followSymlinks: false, allowEmptyArchive: true
         }
     }
 }
