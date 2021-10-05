@@ -26,7 +26,7 @@ Jenkins homework
     ![img2](./img/Screenshot%202021-09-30%20213739.png)
 5. Added a when condition so "build" stage is skipped when commit message equals to "SKIP_CI"
    ![img3](./img/Screenshot%202021-09-30%20223739.png)
-6. As a sample project to build, I used a HTML5 boilerplate, just npm project (i utilized my previous code - a project from external EPAM training course)
+6. As a sample project to build, I used a [HTML5 boilerplate](https://github.com/h5bp/html5-boilerplate), just npm project (i utilized my previous code - [a project from external EPAM training course](https://github.com/alex-kay/html5-boilerplate/blob/master/Jenkinsfile))
 7. Last stage - archiving artifacts built by npm in zip file
 8. Added github webhook
 9. Finally! jenkins builds website and adds zipped /dist/ folder to artifacts
