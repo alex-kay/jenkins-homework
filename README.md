@@ -25,4 +25,4 @@ Jenkins homework
 5. Added a when condition so "build" stage is skipped when commit message equals to "SKIP_CI"
    ![img3](https://github.com/alex-kay/jenkins-homework/blob/main/img/Screenshot%202021-09-30%20223739.png)
 6. As a sample project to build, I use a HTML5 boilerplate, just npm project
-   
+7. Last stage - archiving artifacts built by npm in zip file
