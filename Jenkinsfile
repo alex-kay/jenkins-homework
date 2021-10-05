@@ -51,10 +51,10 @@ pipeline {
         }
     }
     post {
-         always {
-             zip artifact-${GIT_BRANCH}-${BUILD_NUMBER}.zip ./dist/
+        always {
+            sh 'zip artifact-${GIT_BRANCH}-${BUILD_NUMBER}.zip ./dist/ '
             //  archiveArtifacts artifacts: '**/dist/', followSymlinks: false, allowEmptyArchive: true
-         }
-     }
+        }
+    }
 }
 
