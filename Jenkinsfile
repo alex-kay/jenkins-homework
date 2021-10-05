@@ -13,7 +13,10 @@ pipeline {
             steps{
                 echo 'Testing shred library call:'
             }
-            call 'alex'
+            steps{
+                call 'alex'
+            }
+            
         }
         stage('Install modules') {
         steps {
