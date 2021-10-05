@@ -8,6 +8,7 @@ pipeline {
 
     stages {
         stage('Test'){
+            echo 'Testing shred library call:'
             call 'alex'
         }
         stage('Install modules') {
