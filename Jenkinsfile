@@ -1,25 +1,18 @@
 pipeline {
-  agent any
-  environment {
-    SKIP_COMMIT_MSG = "SKIP_CI"
-  }
-  stages {
-    stage("Install modules") {
+    agent any
+    environment {
+        SKIP_COMMIT_MSG = 'SKIP_CI'
+    }
+
+    stages {
+    stage('Install modules') {
       steps {
-        sh ""
-        "
-        npm install
-          ""
-        "
+        sh 'npm install'
       }
     }
-    stage("Run test") {
+    stage('Run test') {
       steps {
-        sh ""
-        "
-        npm run test
-          ""
-        "
+        sh 'npm run test'
       }
     }
     stage('Get commit message') {
@@ -36,13 +29,9 @@ pipeline {
         }
       }
       steps {
-        echo "Building!"
+        echo 'Building!'
         steps {
-          sh ""
-          "
-          npm run build
-            ""
-          "
+          sh 'npm run build'
         }
       }
     }
@@ -51,22 +40,22 @@ pipeline {
       steps {
         parallel(
           a: {
-            sh "ping -c 3 instagram.com"
+            sh 'ping -c 3 instagram.com'
           },
           b: {
-            sh "ping -c 3 vk.com"
+            sh 'ping -c 3 vk.com'
           },
           c: {
-            sh "ping -c 3 facebook.com"
+            sh 'ping -c 3 facebook.com'
           }
         )
       }
     }
     post {
-        always {
-            archiveArtifacts artifacts: '**/dist/', followSymlinks: false, allowEmptyArchive: true
-        }
+         always {
+             archiveArtifacts artifacts: '**/dist/', followSymlinks: false, allowEmptyArchive: true
+         }
+     }
     }
-
-  }
 }
+
