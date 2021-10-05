@@ -18,8 +18,8 @@ pipeline {
         stage('Get commit message and branch') {
         steps {
             script {
-                env.GIT_BRANCH = $(git rev-parse --abbrev-ref HEAD)
-                env.GIT_COMMIT_MSG = $(git log -1 --pretty=%B ${GIT_COMMIT}', returnStdout: true).trim())
+                env.GIT_BRANCH = sh(script: 'git rev-parse --abbrev-ref HEAD', returnStdout: true).trim()
+                env.GIT_COMMIT_MSG = sh(script: 'git log -1 --pretty=%B ${GIT_COMMIT}', returnStdout: true).trim()
             }
         }
         }
@@ -53,7 +53,7 @@ pipeline {
     post {
          always {
              zip artifact-${GIT_BRANCH}-${BUILD_NUMBER}.zip ./dist/
-            //##  archiveArtifacts artifacts: '**/dist/', followSymlinks: false, allowEmptyArchive: true
+            //  archiveArtifacts artifacts: '**/dist/', followSymlinks: false, allowEmptyArchive: true
          }
      }
 }
