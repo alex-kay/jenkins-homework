@@ -12,8 +12,7 @@ pipeline {
         stage('Test'){
             steps{
                 echo 'Testing shred library call:'
-            }
-            steps{
+            
                 call 'alex'
             }
             
