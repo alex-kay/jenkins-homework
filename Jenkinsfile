@@ -30,8 +30,11 @@ pipeline {
             }
         }
         steps {
-            sh 'npm run build'
-            sh 'git tag build-${BUILD_NUMBER}'
+            sh '''
+            npm run build
+            git tag build-${BUILD_NUMBER}
+            git push --tags
+            '''
             }
         }
 
