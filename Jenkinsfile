@@ -18,7 +18,7 @@ pipeline {
             steps{
                 echo 'Testing shred library call:'
             
-                Echofn 'alex'
+                Echofn {name = 'alex'}
             }
             
         }
