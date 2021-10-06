@@ -5,6 +5,7 @@ pipeline {
     agent any
     environment {
         SKIP_COMMIT_MSG = 'SKIP_CI'
+
     }
 
     stages {
