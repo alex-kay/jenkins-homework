@@ -34,6 +34,10 @@ pipeline {
             }
         }
         steps {
+            withCredentials([usernamePassword(credentialsId: 'github_key', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+    sh("git tag -a some_tag -m 'Jenkins'")
+    sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@${REPO_URL} --tags')
+}
             sh '''
             npm run build
             git tag build-${BUILD_NUMBER}
