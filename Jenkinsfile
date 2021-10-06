@@ -35,8 +35,8 @@ pipeline {
         }
         steps {
             withCredentials([usernamePassword(credentialsId: 'github_key', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-    sh("git tag -a some_tag -m 'Jenkins'")
-    sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@${REPO_URL} --tags')
+    sh('git tag -a "${BUILD_NUMBER}" -m "Added build tag"')
+    sh('git push --tags')
 }
             sh '''
             npm run build
@@ -48,17 +48,7 @@ pipeline {
 
         stage('Ping websites') {
         steps {
-            parallel(
-            a: {
-                sh 'ping -c 3 instagram.com'
-            },
-            b: {
-                sh 'ping -c 3 vk.com'
-            },
-            c: {
-                sh 'ping -c 3 facebook.com'
-            }
-            )
+            Ping()
         }
         }
     }
