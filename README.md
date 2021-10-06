@@ -34,3 +34,4 @@ Jenkins homework
 10. Moved all logic to [library](https://github.com/alex-kay/jenkins-shared-lib), only some steps left in Jenkinsfile.
 11. Added shared library to Jenkins in configuration.
     ![img5](/img/Screenshot%202021-10-06%20111503.png)
+12. Added slack integration plugin, registered a workspace
