@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Run test') {
         steps {
-            sh 'npm run test'
+            Test()
         }
         }
         stage('Get commit message and branch') {
