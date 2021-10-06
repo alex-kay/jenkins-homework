@@ -1,6 +1,6 @@
 
 @Library('pipeline-library-demo') _
-Echofn 'alex'
+Echo ()
 // pipeline {
 //     agent any
 //     environment {
