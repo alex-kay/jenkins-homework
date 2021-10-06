@@ -35,7 +35,6 @@ pipeline {
         }
         steps {
             Build()
-            
             }
         }
 
@@ -47,9 +46,8 @@ pipeline {
     }
     post {
         always {
-            sh 'zip branch-${GIT_BRANCH}-build-${BUILD_NUMBER}.zip ./dist/* '
-            archiveArtifacts artifacts: '*.zip', followSymlinks: false, allowEmptyArchive: true
-        }
+            Archive()
+            }
     }
 }
 
