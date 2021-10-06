@@ -5,9 +5,6 @@ pipeline {
     agent any
     environment {
         SKIP_COMMIT_MSG = 'SKIP_CI'
-        GIT_BRANCH = sh(script: 'git rev-parse --abbrev-ref HEAD', returnStdout: true).trim()
-        GIT_COMMIT_MSG = sh(script: 'git log -1 --pretty=%B ${GIT_COMMIT}', returnStdout: true).trim()
-            
 
     }
 
@@ -23,12 +20,14 @@ pipeline {
             Test()
         }
         }
-        // stage('Get commit message and branch') {
-        // steps {
-        //     script {
-        //         }
-        // }
-        // }
+        stage('Get commit message and branch') {
+        steps {
+            script {
+                env.GIT_BRANCH = sh(script: 'git rev-parse --abbrev-ref HEAD', returnStdout: true).trim()
+                env.GIT_COMMIT_MSG = sh(script: 'git log -1 --pretty=%B ${GIT_COMMIT}', returnStdout: true).trim()
+            }
+        }
+        }
         stage('Build') {
         when {
             expression {
