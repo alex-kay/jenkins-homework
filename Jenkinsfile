@@ -1,5 +1,5 @@
 
-@Library('pipeline-library-demo')_
+@Library('jenkins-shared-lib')_
 
 pipeline {
     agent any
