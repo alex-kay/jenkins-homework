@@ -11,12 +11,12 @@ pipeline {
         stage('Install modules') {
         steps {
             // sh 'npm install'
-            Install()
+            Main.install()
         }
         }
         stage('Run test') {
         steps {
-            Test()
+            Main.test()
         }
         }
         stage('Get commit message and branch') {
