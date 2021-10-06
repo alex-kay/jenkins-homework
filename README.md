@@ -13,7 +13,7 @@ Jenkins homework
 * and store it like artifact and build_number *(done)*
 * create shared library to send slack notification with build status **(TO DO)**
 * in parallel ping 3 different servers and if ping failed - stop the job *(done)*
-* move all logic to shared library **(TO DO)**
+* move all logic to shared library *(almost)*
 * ADDITIONAL: after building app, Jenkins should tag the current commit with build number *(done)*
 
 ## my actions
@@ -31,3 +31,4 @@ Jenkins homework
 8. Added github webhook
 9. Finally! jenkins builds website and adds zipped /dist/ folder to artifacts
     ![img4](/img/Screenshot%202021-10-06%20015846.png)
+10. Moved all logic to [library](https://github.com/alex-kay/jenkins-shared-lib), only some steps left in Jenkinsfile.
