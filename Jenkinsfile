@@ -23,12 +23,12 @@ pipeline {
             Test()
         }
         }
-        stage('Get commit message and branch') {
+        // stage('Get commit message and branch') {
         // steps {
         //     script {
         //         }
         // }
-        }
+        // }
         stage('Build') {
         when {
             expression {
