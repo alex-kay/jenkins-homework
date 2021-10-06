@@ -1,10 +1,11 @@
-library identifier: 'jenkins-shared-lib@main',
-    // 'mylibraryname' is just an identifier, it can be anything you like
-    // 'master' refers to a valid git ref (branch)
-    retriever: modernSCM([
-      $class: 'GitSCMSource', // remove this if it's public!
-      remote: 'https://github.com/alex-kay/jenkins-shared-lib.git'
-])
+// library identifier: 'jenkins-shared-lib@main',
+//     // 'mylibraryname' is just an identifier, it can be anything you like
+//     // 'master' refers to a valid git ref (branch)
+//     retriever: modernSCM([
+//       $class: 'GitSCMSource', // remove this if it's public!
+//       remote: 'https://github.com/alex-kay/jenkins-shared-lib.git'
+// ])
+@Library('pipeline-library-demo')_
 
 pipeline {
     agent any
@@ -17,7 +18,7 @@ pipeline {
             steps{
                 echo 'Testing shred library call:'
             
-                call 'alex'
+                Echofn 'alex'
             }
             
         }
