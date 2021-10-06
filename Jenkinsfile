@@ -46,6 +46,7 @@ pipeline {
     post {
         always {
             Archive()
+            slackSend color: "good", message: "Message from Jenkins Pipeline"
             }
     }
 }
