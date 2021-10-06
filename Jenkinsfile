@@ -46,8 +46,18 @@ pipeline {
     post {
         always {
             Archive()
-            slackSend color: "good", message: "Message from Jenkins Pipeline"
-            }
+        }
+        success {
+            slackSend color: "good", message: "Pipeline $JOB_NAME built $BRANCH_NAME build #$BUILD_NUMBER at node $NODE_NAME succesfully!"
+        }
+        unstable {
+            slackSend color: "warning", message: "Pipeline $JOB_NAME built $BRANCH_NAME build #$BUILD_NUMBER at node $NODE_NAME unstable!"
+        
+        }
+        failure {
+            slackSend color: "danger", message: "Pipeline $JOB_NAME built $BRANCH_NAME build #$BUILD_NUMBER at node $NODE_NAME failed!"
+        
+        }
     }
 }
 
