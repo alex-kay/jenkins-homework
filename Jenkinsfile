@@ -5,13 +5,11 @@ pipeline {
     agent any
     environment {
         SKIP_COMMIT_MSG = 'SKIP_CI'
-
     }
 
     stages {
         stage('Install modules') {
         steps {
-            // sh 'npm install'
             Install()
         }
         }
