@@ -3,6 +3,9 @@
 
 pipeline {
     agent any
+    options {
+        parallelsAlwaysFailFast()
+    }
     environment {
         SKIP_COMMIT_MSG = 'SKIP_CI'
     }
