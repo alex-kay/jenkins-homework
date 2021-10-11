@@ -29,7 +29,7 @@ pipeline {
         //         env.GIT_COMMIT_MSG = sh(script: 'git log -1 --pretty=%B ${GIT_COMMIT}', returnStdout: true).trim()
         //     }
         // }
-        }
+        // }
         stage('Build') {
         when {
             expression {
