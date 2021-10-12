@@ -30,15 +30,13 @@ pipeline {
         }
         steps {
             Build()
-            }
-        steps {
             Ping()
             }
         }
     }
     post {
         always {
-            echo "Result ${currentBuild.result}"
+            echo "Result ${currentBuild.currentResult}"
             Archive()
         }
         success {
