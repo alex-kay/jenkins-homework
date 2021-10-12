@@ -38,10 +38,10 @@ pipeline {
     }
     post {
         always {
+            echo Result ${currentBuild.result}
             Archive()
         }
         success {
-            sh(script: 'echo Result ${currentBuild.result}', returnStdout: true).trim()
             slackSend color: "good", message: "Pipeline $JOB_NAME built $BRANCH_NAME build #$BUILD_NUMBER at node $NODE_NAME succesfully!"
         }
         unstable {
