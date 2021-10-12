@@ -38,7 +38,7 @@ pipeline {
     }
     post {
         always {
-            echo Result ${currentBuild.result}
+            echo "Result ${currentBuild.result}"
             Archive()
         }
         success {
