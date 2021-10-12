@@ -14,6 +14,7 @@ pipeline {
     stages {
         stage('Install modules') {
         steps {
+            slackSend message:"Pipeline $JOB_NAME started"
             Install()
         }
         }
@@ -22,7 +23,7 @@ pipeline {
             Test()
         }
         }
-        stage('Build') {
+        stage('Build, ping websites') {
         when {
             expression {
             env.GIT_COMMIT_MSG != env.SKIP_COMMIT_MSG
@@ -36,7 +37,7 @@ pipeline {
     }
     post {
         always {
-            slackSend  message: "Pipeline $JOB_NAME built $BRANCH_NAME build #$BUILD_NUMBER at node $NODE_NAME with status: ${currentBuild.currentResult}!"
+            slackSend  message: "Pipeline $JOB_NAME on branch $BRANCH_NAME build #$BUILD_NUMBER at node $NODE_NAME finished with status: ${currentBuild.currentResult}!"
             Archive()
         }
     }
