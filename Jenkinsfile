@@ -36,17 +36,8 @@ pipeline {
     }
     post {
         always {
-            echo "Result ${currentBuild.currentResult}"
+            slackSend  message: "Pipeline $JOB_NAME built $BRANCH_NAME build #$BUILD_NUMBER at node $NODE_NAME with status: ${currentBuild.currentResult}!"
             Archive()
-        }
-        success {
-            slackSend color: "good", message: "Pipeline $JOB_NAME built $BRANCH_NAME build #$BUILD_NUMBER at node $NODE_NAME succesfully!"
-        }
-        unstable {
-            slackSend color: "warning", message: "Pipeline $JOB_NAME built $BRANCH_NAME build #$BUILD_NUMBER at node $NODE_NAME unstable!"
-        }
-        failure {
-            slackSend color: "danger", message: "Pipeline $JOB_NAME built $BRANCH_NAME build #$BUILD_NUMBER at node $NODE_NAME failed!"
         }
     }
 }
