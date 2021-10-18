@@ -7,11 +7,11 @@ Jenkins homework
 * connect static slave node **(TO DO)**
 * create declarative job *(done)*
 * add parameter environment *(done)*
-* trigger on push and pr *(done with wbhook)*
+* trigger on push and pr *(done with webhook)*
 * skip build if commit message is "SKIP_CI" *(done)*
 * create zip file with suffix $BRANCH_NAME *(done)*
 * and store it like artifact and build_number *(done)*
-* create shared library to send slack notification with build status **(TO DO)**
+* create shared library to send slack notification with build status *(done)*
 * in parallel ping 3 different servers and if ping failed - stop the job *(done)*
 * move all logic to shared library *(almost)*
 * ADDITIONAL: after building app, Jenkins should tag the current commit with build number *(done)*
